@@ -190,6 +190,112 @@ let car = {
 
 ```
 
+## Default values for function parameters
+
+```
+function greet(greeting, name="John") {      // default parameter
+  console.log(greetng + ", " + name);
+}
+```
+
+passing a function: 
+
+```
+function receive(complete){
+  complete();
+}
+
+receive(function() {
+  console.log("complete");
+});
+
+```
+
+
+## Arrow functions
+
+In arrow functions 'this' refers still to the scope outside of the function, so you don't have to use 
+`let self = this;`
+
+```
+let greeting = ( msg, name ) => msg + name;
+```
+
+or with only one parameter you can skip braces
+
+```
+let squared = x => x*x;
+```
+
+
+## String templates
+
+You don't have to put new line signs
+You can use expressions within the braces
+
+```
+let salutation = "Hello";
+
+let greeting = `${salutation}, World!`
+
+console.log(greeting);
+```
+
+You can defign the function, that will use `strings` from your string and will put them into an array
+and will use `values` and put them into an array. Then it returns new transformed string.
+
+
+```
+function tag(strings, ...values){
+  if (values[0]<20){
+    values[1] = "awake"
+  } else {
+    values[1] = "sleepy"
+  }
+
+  return `${strings[0]${values[0]}${strings[1]}${values[1]}`
+}
+
+let message = tag`It's ${new Date().getHours()} and I'm ${""});
+
+console.log(message);
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
